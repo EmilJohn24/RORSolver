@@ -20,6 +20,10 @@ def _V(val=1, form="None", interest=0.0, n=0):
     return V(val, form, n).subs(i, interest)
 
 
+def _F(form="None", interest=0.0, n=0):
+    return _V(val=1, form=form, interest=interest, n=n)
+
+
 def irr(revenues, expenditures):
     return nsolve(Eq(revenues, expenditures), 0.1)
 
